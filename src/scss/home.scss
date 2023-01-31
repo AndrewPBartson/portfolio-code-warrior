@@ -1,0 +1,226 @@
+.home-page {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 700px 1fr;
+
+  .text-zone {
+    position: absolute;
+    left: 10%;
+    top: 45%;
+    transform: translateY(-50%);
+    width: 48%;
+    max-height: 90%;
+    z-index: 5;
+  }
+
+  h1 {
+    color: #fff;
+    font-size: 66px;
+    line-height: 60px;
+    margin: 0;
+    font-family: 'Coolvetica';
+    font-weight: 400;
+
+    &:before {
+      content: '<h1>';
+      font-family: 'La Belle Aurore', cursive;
+      color: #ffd700;
+      font-size: 20px;
+      position: absolute;
+      margin-top: -40px;
+      left: -15px;
+      opacity: 0.6;
+    }
+
+    &:after {
+      content: '</h1>';
+      font-family: 'La Belle Aurore', cursive;
+      color: #ffd700;
+      font-size: 18px;
+      position: absolute;
+      margin-top: 20px;
+      margin-left: 20px;
+      animation: fadeIn 1s 1.7s backwards;
+      opacity: 0.6;
+    }
+
+    img {
+      margin-top: 6px;
+      opacity: 0;
+      width: 66px;
+      height: auto;
+      animation: rotateIn 1s linear both;
+      animation-delay: 1.4s;
+    }
+  }
+
+  h2 {
+    color: #8d8d8d;
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: sans-serif;
+    letter-spacing: 3px;
+    animation: fadeIn 1s 1.8s backwards;
+  }
+
+  .flat-button {
+    color: #ffd700;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    font-family: sans-serif;
+    text-decoration: none;
+    width: 125px;
+    padding: 10px 18px;
+    border: 1px solid #ffd700;
+    margin-top: 25px;
+    float: left;
+    animation: fadeInAnimation 1s 1.8s backwards;
+    white-space: nowrap;
+
+    &:hover {
+      background: #ffd700;
+      color: #333;
+    }
+  }
+
+  .cube_container {
+    grid-column-start: 2;
+    grid-row-start: 1;
+    position: absolute;
+    left: 10%;
+    top: 38%;
+    transform: translateY(-50%);
+    width: 40%;
+    max-height: 90%;
+  }
+  
+  .word_break {
+    display: none;
+    visibility: hidden;
+  }
+  span.breaker {
+    display: inline-block;
+  }
+}
+
+.cube_wrapper {
+  height: 100%;
+  perspective: 800px;
+	perspective-origin: 50% 150px;
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+}
+.cubespinner {
+  animation-name: spincube;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 12s;
+  transform-style: preserve-3d;
+  transform-origin: 100px 100px 0;
+  margin-left: calc(50% - 100px);
+
+  div {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 1px solid #ccc;
+    background: rgba(255, 255, 255, 0.4);
+    text-align: center;
+    font-size: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px 0px lightyellow;
+  }
+
+  .face1 {
+    transform: translateZ(100px);
+    color: #dd0031;
+  }
+  .face2 {
+    transform: rotateY(90deg) translateZ(100px);
+    color: #f06529;
+  }
+  .face3 {
+    transform: rotateY(90deg) rotateX(90deg) translateZ(100px);
+    color: #28a4d9;
+  }
+  .face4 {
+    transform: rotateY(180deg) rotateZ(90deg) translateZ(100px);
+    color: #5ed4f4;
+  }
+  .face5 {
+    transform: rotateY(-90deg) rotateZ(90deg) translateZ(100px);
+    color: #efd81d;
+  }
+  .face6 {
+    transform: rotateX(-90deg) translateZ(100px);
+    color: #ec4d28;
+  }
+}
+
+@keyframes spincube {
+  from,
+  to {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  16% {
+    transform: rotateY(-90deg) rotateZ(90deg);
+  }
+  33% {
+    transform: rotateY(-90deg) rotateX(90deg);
+  }
+  50% {
+    transform: rotateY(-180deg) rotateZ(90deg);
+  }
+  66% {
+    transform: rotateY(-270deg) rotateX(90deg);
+  }
+  83% {
+    transform: rotateX(90deg);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  span.word_break {
+    display: block !important;
+    visibility: visible !important;
+  }
+  .home-page h1 {
+    padding-top: 10px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .tags,
+  .home-page h1:before,
+  .home-page h1:after {
+    display: none;
+  }
+  .home-page .text-zone {
+    position: initial;
+    width: 100%;
+    transform: none;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  .home-page .flat-button {
+    display: block;
+    margin: 20px auto 0 auto;
+    width: 124px;
+  }
+  .home-page {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 340px;
+  }
+  .home-page .cube_container {
+    grid-column-start: 1;
+    grid-row-start: 2;
+    padding-left: 70px;
+  }
+}
