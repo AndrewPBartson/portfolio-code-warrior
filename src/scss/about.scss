@@ -14,7 +14,7 @@
   z-index: 5;
 }
 
-.side-zone {
+.slide-zone {
   margin-left: 0;
   margin-right: 30px;
   grid-column-start: 2;
@@ -124,7 +124,7 @@ ul.topic_list li:before {
   .container.about-page .text-zone {
     top: 45%;
   }
-  .side-zone {
+  .slide-zone {
       grid-template-rows: 25% auto 35%;
   }
 }
@@ -145,7 +145,7 @@ ul.topic_list li:before {
     grid-template-columns: 1fr;
     grid-template-rows: auto 340px;
   }
-  .about-page .side-zone {
+  .about-page .slide-zone {
     grid-column-start: 1;
     grid-template-rows: 5% auto auto;
   }
@@ -170,6 +170,3 @@ ul.topic_list li:before {
     left: -15px;
   }
 }
-
-
-

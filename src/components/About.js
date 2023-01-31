@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Paper } from '@mui/material'
 import Carousel from 'react-material-ui-carousel'
+
 import Loader from 'react-loaders'
 import Letters from './Letters'
 import { slideItems } from './slides'
@@ -8,8 +9,6 @@ import '../scss/about.scss'
 
 const About = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
-
-  let items = slideItems
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -103,13 +102,13 @@ const About = () => {
         </div>
 
 
-        <div className="side-zone">
+        <div className="slide-zone">
           <div>&#160;</div>
 
           <div className="slider">
             <Carousel>
               {
-                items.map((item, i) => <Item key={i} item={item} />)
+                slideItems.map((item, i) => <Item key={i} item={item} />)
               }
             </Carousel>
           </div>
@@ -128,8 +127,10 @@ function Item(props) {
     <Paper>
       <img
         className='slideImg'
+        width={400}
+        height={300}
         title={props.item.caption}
-        alt={props.item.caption}
+        alt={props.item.name}
         src={props.item.img}
       />
     </Paper>
