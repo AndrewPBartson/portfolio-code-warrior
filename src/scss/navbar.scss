@@ -87,14 +87,14 @@
         content: 'ABOUT';
       }
     }
-    a.contact-link {
-      &:after {
-        content: 'CONTACT';
-      }
-    }
     a.projects-link {
       &:after {
         content: 'PROJECTS';
+      }
+    }
+    a.contact-link {
+      &:after {
+        content: 'CONTACT';
       }
     }
     a.linked-link {
@@ -163,7 +163,7 @@ a.linked-link:hover {
 
     nav {
       display: grid;
-      grid-template-columns: 75px 75px 112px 112px;
+      grid-template-columns: 75px 82px 113px 103px;
       float: right;
     }
     nav {
